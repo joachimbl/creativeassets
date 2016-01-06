@@ -1,4 +1,5 @@
 module Frontend
-  class BaseController < AplicationController
+  class BaseController < ::ApplicationController
+    layout "frontend"
   end
 end
