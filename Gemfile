@@ -6,6 +6,9 @@ gem 'rails', '4.2.4'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 
+# USe Bootstrap for frontend framework
+gem 'bootstrap', '~> 4.0.0.alpha3'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -38,6 +41,8 @@ gem 'unicorn'
 
 # Use puma as the app server
 gem 'puma'
+
+gem 'autoprefixer-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
