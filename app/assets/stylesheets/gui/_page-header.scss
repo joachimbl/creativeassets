@@ -1,0 +1,36 @@
+@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700|Cookie);
+
+.colored-text {
+  font-family: 'Cookie';
+  font-size: 40px;
+  background: #ee3a52;
+  background: -webkit-linear-gradient( left, #ff512f 0%, #dd2476 25%, #ff512f 100% ) repeat;
+  -webkit-background-clip: text;
+  -ms-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -ms-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+  text-fill-color: transparent;
+  -webkit-animation-name: masked-animation;
+  -webkit-animation-duration: 90s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+}
+
+@-webkit-keyframes masked-animation {
+  0% { background-position: 0 0;}
+  100% {background-position: -8000px -3000px;}
+}
+
+.navbar-brand {
+  img {
+    max-width: 170px;
+  }
+}
+
+.navbar {
+  background-color: #fff;
+  margin-bottom: 30px;
+}

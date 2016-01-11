@@ -1,0 +1,21 @@
+//
+// Card
+//
+
+@include media-breakpoint-up(sm) {
+  .card-columns {
+    column-count: 2;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .card-columns {
+    column-count: 3;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .card-columns {
+    column-count: 4;
+  }
+}
