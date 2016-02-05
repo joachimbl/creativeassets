@@ -30,7 +30,78 @@
   }
 }
 
-.navbar {
-  background-color: #fff;
-  margin-bottom: 30px;
+.navbar-nav {
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
+
+.main-header {
+  position: relative;
+  padding: 30px 0 70px;
+
+  .pulse-animation {
+    position: absolute;
+    right: 50px;
+    bottom: 25px;
+  }
+}
+
+.pulse-animation {
+
+  .pulse-circle, .pulse-circle-2, .pulse-circle-3 {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    animation-name: Pulse;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    background: radial-gradient(circle,#ff512f 0%,#dd2476 100%);
+    top: 8px;
+    left: 7px;
+  }
+
+  .pulse-circle-2 {
+    animation-delay: 0.5s;
+  }
+
+  .pulse-circle-3 {
+    animation-delay: 1s;
+  }
+
+  i {
+    font-size: .9em;
+    margin: 4px;
+    line-height: 43px;
+  }
+}
+
+@-webkit-keyframes Pulse{
+  0% {
+    transform:scale(1);
+    opacity:.25;
+    animation-timing-function:ease-in-out;
+  }
+
+  50% {
+    transform:scale(2.5);
+    opacity:.02;
+    animation-timing-function:ease-in-out;
+  }
+
+  100% {
+    transform:scale(1);
+    opacity:.25;
+    animation-timing-function:ease-in-out;
+  }
+}
+
+.section-header {
+  padding: 25px 0 48px;
+  width: 100%;
+}
+
+.main-header-wrapper {
+  background: #fff;
+}
+

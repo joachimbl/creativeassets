@@ -77,3 +77,49 @@
     }
   }
 }
+
+.btn-add-asset {
+  font-size: $font-size-h2;
+  height: 50px;
+  width: 50px;
+  padding: 0px;
+  background: linear-gradient( left, #ff512f 0%, #dd2476 50%, #ff512f 100% ) repeat;
+  border-radius: 50%;
+  color: #fff;
+  animation-name: masked-animation;
+  animation-duration: 2000s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  box-shadow: none;
+  position: absolute;
+  margin: 0px auto;
+}
+
+.btn-add-asset-sm {
+  font-size: $font-size-h2;
+  height: 50px;
+  width: 50px;
+  padding: 0px;
+  background: linear-gradient( left, #ff512f 0%, #dd2476 50%, #ff512f 100% ) repeat;
+  border-radius: 50%;
+  color: #fff;
+  animation-name: masked-animation;
+  animation-duration: 2000s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  box-shadow: none;
+  position: absolute;
+  text-align: center;
+
+
+  &:hover {
+    color: #fff;
+  }
+}
+
+@-webkit-keyframes masked-animation {
+  0% { background-position: 0 0;}
+  100% {background-position: -8000px -3000px;}
+}
+
+
