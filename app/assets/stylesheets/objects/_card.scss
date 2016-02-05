@@ -1,6 +1,17 @@
 //
 // Card
 //
+.card {
+  @include transition(box-shadow 200ms ease);
+  z-index: 500;
+
+  &:hover {
+    @include box-shadow(0 6px 7px rgba(0,0,0,0.25),0 24px 48px rgba(0,0,0,0.25));
+
+    z-index: 900;
+    cursor: pointer;
+  }
+}
 
 @include media-breakpoint-up(sm) {
   .card-columns {
@@ -10,12 +21,16 @@
 
 @include media-breakpoint-up(md) {
   .card-columns {
+    column-count: 2;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .card-columns {
     column-count: 3;
   }
 }
 
-@include media-breakpoint-up(xl) {
-  .card-columns {
-    column-count: 4;
-  }
+.card-columns {
+  z-index: 10;
 }

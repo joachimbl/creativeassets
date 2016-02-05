@@ -9,19 +9,64 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 <body>
 
-<nav class="navbar navbar-light bg-faded">
+<div class="main-header-wrapper">
+  <header class="container">
+    <nav class="main-header">
+      <a class="navbar-brand" href="#">
+        <%= image_tag("logo.svg") %>
+      </a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+      </ul>
+      <div class="pulse-animation">
+        <div class="pulse-circle"></div>
+        <div class="pulse-circle-2"></div>
+        <div class="pulse-circle-3"></div>
+        <a class="btn-add-asset-sm" href="" aria-label="Add an awesome asset." role="button" tabindex="-1"><i class="material-icons md-24">add</i></a>
+      </div>
+    </nav>
+  </header>
+</div>
+
+<div class="section-header">
   <div class="container">
-    <a class="navbar-brand" href="#">
-      <%= image_tag("logo.svg") %>
-    </a>
-
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Your assets</h1>
+        <div class="lead">Your assets</div>
+      </div>
+    </div>
   </div>
-</nav>
+</div>
 
-<%= yield %>
+
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <%= yield %>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>
