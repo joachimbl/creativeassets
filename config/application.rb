@@ -19,8 +19,16 @@ module CreativeAssets
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+    config.assets.precompile += %w( frontend/application.js )
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.browserify_rails.commandline_options = '-t coffee-reactify --extension=".js.cjsx"'
+    config.browserify_rails.source_map_environments << 'development'
+
+    config.react.server_renderer_options = {
+      files: ["react-server.js", "frontend/prerendered_react.js.coffee"]
+    }
   end
 end
