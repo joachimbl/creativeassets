@@ -2,13 +2,10 @@ React = require('react')
 
 @Card = React.createClass
   propTypes: ->
-    link: React.PropTypes.object
+    link: React.PropTypes.object.isRequired
 
   getDefaultProps: ->
     link: {}
-
-  componentDidMount: ->
-    console.log(@props)
 
   render: ->
     <div className="card">
@@ -18,13 +15,10 @@ React = require('react')
         <p className="card-text">{@props.link.description}</p>
       </div>
       <ul className="list-group list-group-flush">
-        <li className="list-group-item">Cras justo odio</li>
-        <li className="list-group-item">Dapibus ac facilisis in</li>
-        <li className="list-group-item">Vestibulum at eros</li>
+        <li className="list-group-item">{@props.link.author.username}</li>
       </ul>
       <div className="card-block">
-        <a href="#" className="card-link">Card link</a>
-        <a href="#" className="card-link">Another link</a>
+        <a href={@props.link.path} className="card-link">Link details</a>
       </div>
     </div>
 

@@ -1,38 +1,60 @@
 React = require('react')
 Card = require('../components/card')
-
-@Loader = React.createClass
-  render: ->
-    <div className="loader">Loading ...</div>
+LinksAPI = require('../api/links')
 
 @Frontpage = React.createClass
   getInitialState: ->
     {
-      links: []
+      links: [],
+      lastPage: 0,
+      loading: false
     }
 
+  componentDidMount: ->
+    @loadMore()
+
   links: ->
-    @props.links.map (link, index) ->
+    @state.links.map (link, index) ->
       <Card key={link.id} link={link || {}} index={index} />
 
-  loadMore: (page) ->
-    $.ajax
-      type: "GET"
-      url: "/api/links?page=" + page
-      dataType: "json"
-      headers:
-        "Content-Type": "application/json"
-      success: (data, status) ->
-        console.log(data)
-        @setState({ links: @state.links.concat(data.links) })
-      error: (data, status) ->
-        errorCallback(data)
+  addLinks: (links) ->
+    @setState({
+      links: @state.links.concat(links)
+      lastPage: @state.lastPage + 1
+    })
+
+  loading: (state) ->
+    @setState({loading: state})
+
+  loadMore: ->
+    @loading(true)
+    page = @state.lastPage + 1
+    LinksAPI.index {page: page}
+    ,(data) =>
+      @addLinks(data.links)
+    ,(data) =>
+      console.log(data)
 
   render: ->
-    <div className="card-columns">
-      {@links()}
+    <div>
+      <div className="card-columns">
+        {@links()}
+      </div>
+      <LoadMoreButton loading={@state.loading} onClick={@loadMore} />
     </div>
 
-module.exports = @Frontpage
+LoadMoreButton = React.createClass
+  propTypes: ->
+    loading: React.PropTypes.bool
+    onClick: React.PropTypes.func.isRequired
 
+  getDefaultProps: ->
+    leading: false
+
+  render: ->
+    <a className="btn btn-primary"
+       disabled={@props.loading}
+       onClick={@props.onClick}>See more</a>
+
+module.exports = @Frontpage
 
