@@ -15,6 +15,10 @@
   </head>
 <body>
 
+<% unless current_user %>
+  <%= link_to "Sign in with Facebook", omniauth_authorize_path(:user, :facebook), class: "btn btn-facebook btn-lg btn-block" %><br />
+<% end %>
+
 <div class="main-header-wrapper">
   <header class="container">
     <nav class="main-header">
