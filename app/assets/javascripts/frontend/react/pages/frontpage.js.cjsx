@@ -1,7 +1,14 @@
 React = require('react')
+Card = require('../components/card')
 
 @Frontpage = React.createClass
   render: ->
-    <h1>Hello world!</h1>
+    <div className="card-columns">
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </div>
 
 module.exports = @Frontpage

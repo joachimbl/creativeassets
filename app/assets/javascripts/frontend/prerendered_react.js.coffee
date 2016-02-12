@@ -3,8 +3,6 @@
 //= require react-server
 //= require frontend/react/pages/frontpage
 
-console.log("here")
-
 root = exports ? this
 root.app = {}
 root.app.PageT = window.Frontpage
