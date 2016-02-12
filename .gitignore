@@ -22,3 +22,5 @@ log
 
 # System files
 .DS_Store
+
+browserify-cache.json
