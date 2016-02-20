@@ -4,12 +4,15 @@ React = require('react')
   propTypes: ->
     link: React.PropTypes.object.isRequired
 
+  thumbnailUrl: ->
+    @props.link.thumbnail_url.replace('http://', 'https://')
+
   getDefaultProps: ->
     link: {}
 
   render: ->
     <div className="card">
-      <img className="card-img-top img-fluid" src={@props.link.thumbnail_url} alt="Card image cap" />
+      <img className="card-img-top img-fluid" src={@thumbnailUrl()} alt="Card image cap" />
       <div className="card-block">
         <h4 className="card-title">{@props.link.title}</h4>
         <p className="card-text">{@props.link.description}</p>
