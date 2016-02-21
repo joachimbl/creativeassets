@@ -13,6 +13,7 @@ gulp.task('watch', ['watch-coffee']);
 
 gulp.task('watch-coffee', function() {
    gulp.watch('react/lib/**/*.js.cjsx', ['compile-coffee-and-cjsx']);
+   gulp.watch('react/lib/**/*.js', ['compile-coffee-and-cjsx']);
    gulp.watch('react/lib/**/*.js.coffee', ['compile-coffee-and-cjsx']);
 });
 

@@ -1,6 +1,6 @@
 var Frontpage = require('./pages/frontpage');
 
-var CreativeAssets = {
+CreativeAssets = {
   components: {
     frontpage: Frontpage
   }

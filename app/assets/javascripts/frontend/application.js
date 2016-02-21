@@ -1,7 +1,9 @@
-//= require_self
 //= require jquery
-//= require bootstrap
 //= require jquery_ujs
+
+//= require bootstrap
+
 //= require react
 //= require react_ujs
+
 //= require creative-assets
