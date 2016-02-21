@@ -5,11 +5,20 @@
     "browserify-incremental": "^3.0.1",
     "coffee-reactify": "^4.0.0",
     "coffeeify": "^2.0.1",
+    "gulp": "^3.9.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-util": "^3.0.7",
+    "jquery": "^2.2.0",
     "react": "^0.14.7",
     "react-dom": "^0.14.7",
-    "react-medium-editor": "^1.6.2"
+    "react-medium-editor": "^1.6.2",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.7.0"
   },
   "engines": {
     "node": "5.0.0"
+  },
+  "scripts": {
+    "postinstall": "gulp compile-coffee-and-cjsx"
   }
 }

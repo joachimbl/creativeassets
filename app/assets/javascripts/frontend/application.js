@@ -1,6 +1,7 @@
 //= require_self
-//= require ./react/components
+//= require jquery
+//= require bootstrap
+//= require jquery_ujs
+//= require react
 //= require react_ujs
-
-var React = window.React = global.React = require('react');
-var ReactDOM = window.ReactDOM = global.ReactDOM = require('react-dom');
+//= require creative-assets

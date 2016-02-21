@@ -24,11 +24,13 @@ module CreativeAssets
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.browserify_rails.commandline_options = '-t coffee-reactify --extension=".js.cjsx" --extension=".js.coffee"'
-    config.browserify_rails.source_map_environments << 'development'
+    config.assets.paths << Rails.root.join("react", "dist", "javascripts")
 
-    config.react.server_renderer_options = {
-      files: ["react-server.js", "frontend/prerendered_react.js.coffee"]
-    }
+    # config.browserify_rails.commandline_options = '-t coffee-reactify --extension=".js.cjsx" --extension=".js.coffee"'
+    # config.browserify_rails.source_map_environments << 'development'
+
+    # config.react.server_renderer_options = {
+    #   files: ["react-server.js", "frontend/prerendered_react.js.coffee"]
+    # }
   end
 end

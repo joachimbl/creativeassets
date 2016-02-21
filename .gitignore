@@ -14,6 +14,9 @@ db/*.sqlite3-journal
 # Node
 /node_modules/*
 
+# React
+/react/dist/*
+
 # Database dumpfiles
 *.dump
 dump.rdb
