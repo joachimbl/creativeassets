@@ -45,7 +45,7 @@ $brand-danger:              #dd2476 !default;
 
 $enable-flex:               false !default;
 $enable-rounded:            true !default;
-$enable-shadows:            true !default;
+$enable-shadows:            false !default;
 $enable-gradients:          true !default;
 $enable-transitions:        true !default;
 $enable-hover-media-query:  false !default;
@@ -123,9 +123,9 @@ $grid-breakpoints: (
 // Define the maximum width of `.container` for different screen sizes.
 
 $container-max-widths: (
-  sm: 576px,
-  md: 720px,
-  lg: 940px,
+  sm: 100%,
+  md: 100%,
+  lg: 100%px,
   xl: 1140px
 ) !default;
 
@@ -364,7 +364,7 @@ $zindex-modal:             1050 !default;
 
 // Navbar
 
-$navbar-border-radius:              $border-radius !default;
+$navbar-border-radius:              0;
 $navbar-padding-horizontal:         $spacer !default;
 $navbar-padding-vertical:           ($spacer / 2) !default;
 

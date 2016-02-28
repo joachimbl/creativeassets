@@ -15,30 +15,46 @@
   </head>
 <body>
 
-<% unless current_user %>
-  <%= link_to "Sign in with Facebook", omniauth_authorize_path(:user, :facebook), class: "btn btn-facebook btn-lg btn-block" %><br />
-<% end %>
-
 <div class="main-header-wrapper">
   <header class="container">
-    <nav class="main-header">
-      <a class="navbar-brand" href="#">
-        <%= image_tag("logo.svg") %>
-      </a>
-      <ul class="nav navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-      </ul>
+    <nav class="main-header row">
+      <div class="col-xs-5 col-md-3">
+        <a class="navbar-brand" href="#">
+          <%= image_tag("logo.svg") %>
+        </a>
+      </div>
+      <div class="col-xs-7 col-md-4 col-md-push-5">
+        <% unless current_user %>
+          <ul class="nav navbar-nav pull-xs-right sign-up-nav">
+            <li class="nav-item">
+              <a class="nav-link btn btn-primary-outline btn-sm" href="#" data-toggle="button" aria-pressed="false" autocomplete="off">Sign up</a>
+            </li>
+            <li class="nav-item">
+              <%= link_to "Sign in", omniauth_authorize_path(:user, :facebook), class: "nav-link btn btn-primary btn-sm" %>
+            </li>
+          </ul>
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-md-5 col-md-pull-4 main-nav">
+        <ul class="nav navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Pricing</a>
+          </li>
+        </ul>
+      </div>
+
       <div class="pulse-animation">
         <div class="pulse-circle"></div>
         <div class="pulse-circle-2"></div>
