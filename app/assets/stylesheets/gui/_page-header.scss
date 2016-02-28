@@ -25,28 +25,29 @@
 }
 
 .navbar-brand {
-  img {
-    max-width: 170px;
-  }
-}
+  margin-right: 0;
 
-.navbar-nav {
-  padding-top: 15px;
-  padding-bottom: 15px;
+  img {
+    width: 100%;
+    max-width: 180px;
+  }
 }
 
 .main-header {
   position: relative;
-  padding: 30px 0 70px;
+  padding: 10px 0px 0px;
 
   .pulse-animation {
-    position: absolute;
-    right: 50px;
-    bottom: 25px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    height: 50px;
+    width: 50px;
   }
 }
 
 .pulse-animation {
+
 
   .pulse-circle, .pulse-circle-2, .pulse-circle-3 {
     position: absolute;
@@ -105,3 +106,74 @@
   background: #fff;
 }
 
+.main-nav {
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: #f8f8f8;
+  margin-top: 10px;
+
+  .navbar-nav {
+    display: flex;
+  }
+}
+
+.navbar-nav {
+  a {
+    font-size: $font-size-xs;
+  }
+}
+
+.sign-up-nav {
+  .nav-item {
+    margin-left: 3px !important;
+  }
+
+  .btn {
+    padding: 5px 10px;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .navbar-nav {
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    a {
+      font-size: $font-size-sm;
+    }
+  }
+
+  .main-nav {
+    background: inherit;
+    margin-top: 0px;
+  }
+
+  .sign-up-nav {
+    .nav-item {
+      margin-left: 1rem !important;
+    }
+
+    .btn {
+      padding: $btn-padding-y $btn-padding-x;
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+
+  .navbar-nav {
+    a {
+      font-size: $font-size-base;
+    }
+  }
+
+  .main-header {
+    padding: 30px 0 40px;
+
+    .pulse-animation {
+      position: absolute;
+      right: 15px;
+      bottom: -25px;
+    }
+  }
+}
