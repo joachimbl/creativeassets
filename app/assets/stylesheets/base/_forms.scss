@@ -1,88 +1,34 @@
 // Forms ======================================================================
 
-label {
-  font-weight: normal;
-}
+.modal-body,
+.modal-title {
+  color: #fff;
 
-textarea,
-textarea.form-control,
-input.form-control,
-input[type=text],
-input[type=password],
-input[type=email],
-input[type=number],
-[type=text].form-control,
-[type=password].form-control,
-[type=email].form-control,
-[type=tel].form-control,
-[contenteditable].form-control {
-  padding: 0;
-  border: none;
-  border-radius: 0;
-  -webkit-appearance: none;
-  @include box-shadow(inset 0 -1px 0 #ddd);
-  font-size: 16px;
+  .form-control-label {
+    color: rgba(0,0,0,.3);
+  }
+  .form-control {
+    border-bottom: 2px solid rgba(255, 255, 255,.6);
 
-  &:focus {
-    @include box-shadow(inset 0 -2px 0 $brand-primary);
+    &:focus {
+      border-top: 0;
+      border-left: 0;
+      border-right: 0;
+      border-bottom: 2px solid #fff;
+    }
   }
 
-  &[disabled],
-  &[readonly] {
-    @include box-shadow(none);
-    border-bottom: 1px dotted #ddd;
-  }
-
-  &.input {
-    &-sm {
-      font-size: $font-size-sm;
-    }
-
-    &-lg {
-      font-size: $font-size-lg;
-    }
+  .btn-secondary-outline {
+    border-color: #fff;
+    color: #fff;
   }
 }
 
-select,
-select.form-control {
-  border: 0;
-  border-radius: 0;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  padding-left: 0;
-  padding-right: 0\9; // remove padding for < ie9 since default arrow can't be removed
-  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAAJ1BMVEVmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmaP/QSjAAAADHRSTlMAAgMJC0uWpKa6wMxMdjkoAAAANUlEQVR4AeXJyQEAERAAsNl7Hf3X6xt0QL6JpZWq30pdvdadme+0PMdzvHm8YThHcT1H7K0BtOMDniZhWOgAAAAASUVORK5CYII=);
-  background-size: 13px;
-  background-repeat: no-repeat;
-  background-position: right center;
-  @include box-shadow(inset 0 -1px 0 #ddd);
-  font-size: 16px;
-
-  &::-ms-expand {
-    display: none;
-  }
-
-  &.input {
-    &-sm {
-      font-size: $font-size-sm;
-    }
-
-    &-lg {
-      font-size: $font-size-lg;
-    }
-  }
-
-  &:focus {
-    @include box-shadow(inset 0 -2px 0 $brand-primary);
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAMAAACelLz8AAAAJ1BMVEUhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISEhISF8S9ewAAAADHRSTlMAAgMJC0uWpKa6wMxMdjkoAAAANUlEQVR4AeXJyQEAERAAsNl7Hf3X6xt0QL6JpZWq30pdvdadme+0PMdzvHm8YThHcT1H7K0BtOMDniZhWOgAAAAASUVORK5CYII=);
-  }
-
-  &[multiple] {
-    background: none;
-  }
+.modal-header,
+.modal-footer {
+  border-color:  rgba(0, 0, 0,.3);
 }
+
 
 .radio,
 .radio-inline,

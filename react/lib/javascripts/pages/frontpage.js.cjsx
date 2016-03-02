@@ -40,7 +40,9 @@ LinksAPI = require('../api/links')
       <div className="card-columns">
         {@links()}
       </div>
-      <LoadMoreButton loading={@state.loading} onClick={@loadMore} />
+      <div className="text-center">
+        <LoadMoreButton loading={@state.loading} onClick={@loadMore} />
+      </div>
     </div>
 
 LoadMoreButton = React.createClass
@@ -52,7 +54,7 @@ LoadMoreButton = React.createClass
     leading: false
 
   render: ->
-    <a className="btn btn-primary"
+    <a className="btn btn-secondary-outline"
        disabled={@props.loading}
        onClick={@props.onClick}>See more</a>
 
