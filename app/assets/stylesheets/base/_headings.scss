@@ -15,6 +15,10 @@ button {
   letter-spacing: .1px;
 }
 
+.text-center {
+  text-align: center;
+}
+
 a {
   @include transition(all 0.2s);
 }

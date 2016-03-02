@@ -1,5 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=News+Cycle:400,700|Cookie);
-
 .colored-text {
   font-family: 'Cookie';
   font-size: 40px;
@@ -120,6 +118,23 @@
 .navbar-nav {
   a {
     font-size: $font-size-xs;
+  }
+}
+
+.nav-item {
+  .nav-link {
+    color: #ccc;
+  }
+  &:hover {
+    .nav-link {
+      color: #999;
+    }
+  }
+  &.active {
+    .nav-link {
+      color: #999;
+      border-bottom: 1px solid $brand-primary;
+    }
   }
 }
 
