@@ -1,4 +1,4 @@
-pReact = window.React = require('react')
+React = window.React = require('react')
 ReactDOM = window.ReactDOM = require('react-dom')
 
 CA = {}
