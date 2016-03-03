@@ -1,7 +1,6 @@
-var Frontpage = require('./pages/frontpage');
+pReact = window.React = require('react')
+ReactDOM = window.ReactDOM = require('react-dom')
 
-CreativeAssets = {
-  components: {
-    frontpage: Frontpage
-  }
-}
+CA = {}
+CA.Components = {}
+CA.Components.Frontpage = require('./pages/frontpage');
