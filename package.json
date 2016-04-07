@@ -2,10 +2,11 @@
   "name": "creativeassets",
   "dependencies": {
     "browserify": "^13.0.0",
-    "browserify-incremental": "^3.0.1",
+    "browserify-incremental": "^3.1.1",
     "coffee-reactify": "^4.0.0",
     "coffeeify": "^2.0.1",
     "gulp": "^3.9.1",
+    "gulp-replace": "^0.5.4",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-util": "^3.0.7",
     "jquery": "^2.2.0",
@@ -16,9 +17,9 @@
     "watchify": "^3.7.0"
   },
   "engines": {
-    "node": "5.0.0"
+    "node": "5.6.0"
   },
   "scripts": {
-    "postinstall": "gulp compile-coffee-and-cjsx"
+    "postinstall": "gulp compile-react"
   }
 }

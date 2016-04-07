@@ -12,7 +12,7 @@ db/*.sqlite3
 db/*.sqlite3-journal
 
 # Node
-/node_modules/*
+node_modules/*
 
 # React
 /react/dist/*

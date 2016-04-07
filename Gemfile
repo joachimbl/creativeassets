@@ -22,8 +22,6 @@ gem 'sprockets-coffee-react', '>= 3.4.1'
 # # Browserify + Rails = CommonJS Heaven
 # gem 'browserify-rails', '~> 2.2.1'
 
-gem 'react-rails', '~> 1.6.0'
-
 gem 'execjs'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
