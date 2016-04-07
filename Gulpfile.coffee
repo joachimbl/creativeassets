@@ -12,7 +12,7 @@ gulp.task 'watch', [ 'watch-react' ]
 gulp.task 'watch-react', ->
   gulp.watch 'react/lib/**/*.cjsx', [ 'compile-react' ]
   gulp.watch 'react/lib/**/*.js', [ 'compile-react' ]
-  gulp.watch 'react/lib/**/*.jcoffee', [ 'compile-react' ]
+  gulp.watch 'react/lib/**/*.coffee', [ 'compile-react' ]
 
 gulp.task 'default', [ 'compile-react' ]
 

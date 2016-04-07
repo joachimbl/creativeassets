@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.4'
+gem 'rails', '4.1.4'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
@@ -17,10 +17,9 @@ gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.1.0'
 
-gem 'sprockets-coffee-react', '>= 3.4.1'
+gem 'sprockets-rails', '~> 2.3.3'
 
-# # Browserify + Rails = CommonJS Heaven
-# gem 'browserify-rails', '~> 2.2.1'
+gem 'sprockets-coffee-react', '>= 3.4.1'
 
 gem 'execjs'
 # See https://github.com/rails/execjs#readme for more supported runtimes
