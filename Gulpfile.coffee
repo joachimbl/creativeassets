@@ -7,20 +7,20 @@ coffeereactify  = require 'coffee-reactify'
 source          = require 'vinyl-source-stream'
 replace         = require 'gulp-replace'
 
-gulp.task 'watch', [ 'watch-react' ]
+gulp.task 'watch', [ 'watch-frontend' ]
 
-gulp.task 'watch-react', ->
-  gulp.watch 'react/lib/**/*.cjsx', [ 'compile-react' ]
-  gulp.watch 'react/lib/**/*.js', [ 'compile-react' ]
-  gulp.watch 'react/lib/**/*.coffee', [ 'compile-react' ]
+gulp.task 'watch-frontend', ->
+  gulp.watch 'frontend/lib/**/*.cjsx', [ 'compile-frontend' ]
+  gulp.watch 'frontend/lib/**/*.js', [ 'compile-frontend' ]
+  gulp.watch 'frontend/lib/**/*.coffee', [ 'compile-frontend' ]
 
-gulp.task 'default', [ 'compile-react' ]
+gulp.task 'default', [ 'compile-frontend' ]
 
-gulp.task 'compile-react', ->
-  stream = browserifyReact('./react/lib/javascripts/creative-assets.js')
-  stream.pipe(source('creative-assets.js.erb'))
+gulp.task 'compile-frontend', ->
+  stream = browserifyReact('./frontend/lib/javascripts/frontend.js')
+  stream.pipe(source('frontend.js.erb'))
         .pipe(replace('<%s>', ''))
-        .pipe(gulp.dest('react/dist/javascripts'))
+        .pipe(gulp.dest('frontend/dist/javascripts'))
 
 browserifyReact = (file) ->
   browserifyOpts =

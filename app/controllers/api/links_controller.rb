@@ -1,7 +1,7 @@
 module Api
   class LinksController < Api::BaseController
     def index
-      @links = Link.includes(:users, :author).page(page).per(per)
+      @links = Link.includes(:users, :author).page(page).per_page(per_page)
       render json: @links
     end
 
@@ -11,8 +11,8 @@ module Api
       params[:page] || 1
     end
 
-    def per
-      params[:per] || 24
+    def per_page
+      params[:per_page] || 24
     end
   end
 end

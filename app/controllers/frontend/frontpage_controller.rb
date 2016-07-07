@@ -7,8 +7,7 @@ module Frontend
     private
 
     def serialize_links(links)
-      ActiveModel::ArraySerializer.new(links,
-        each_serializer: Api::LinkSerializer).serializable_array
+      ActiveModel::ArraySerializer.new(links, each_serializer: Api::LinkSerializer).as_json
     end
   end
 end
