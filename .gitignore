@@ -15,7 +15,7 @@ db/*.sqlite3-journal
 node_modules/*
 
 # React
-/react/dist/*
+frontend/dist/*
 
 # Database dumpfiles
 *.dump
