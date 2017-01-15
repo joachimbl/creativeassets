@@ -1,29 +1,28 @@
 React = require('react')
 
-const Card = React.createClass({
-  thumbnailUrl: () => {
-    @props.link.thumbnail_url.replace('http://', 'https://')
-  }
-
-  getDefaultProps: () => {
-    link: {}
-  }
-
-  render: () => {
-    <div className="card">
-      <img className="card-img-top img-fluid" src={@thumbnailUrl()} alt="Card image cap" />
-      <div className="card-block">
-        <h4 className="card-title">{@props.link.title}</h4>
-        <p className="card-text">{@props.link.description}</p>
+class Card extends React.Component {
+  render () {
+    return (
+      <div className="card">
+        <img className="card-img-top img-fluid" src={this.props.link.thumbnail_url} alt="Card image cap" />
+        <div className="card-block">
+          <h4 className="card-title">{this.props.link.title}</h4>
+          <p className="card-text">{this.props.link.description}</p>
+        </div>
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">{this.props.link.author.username}</li>
+        </ul>
+        <div className="card-block">
+          <a href={this.props.link.path} className="card-link">Link details</a>
+        </div>
       </div>
-      <ul className="list-group list-group-flush">
-        <li className="list-group-item">{@props.link.author.username}</li>
-      </ul>
-      <div className="card-block">
-        <a href={@props.link.path} className="card-link">Link details</a>
-      </div>
-    </div>
+    )
   }
 })
+
+Card.defaultProps = {
+  link: {}
+};
+
 
 module.exports = Card
