@@ -211,6 +211,8 @@ GEM
     redis (3.3.2)
     responders (2.3.0)
       railties (>= 4.2.0, < 5.1)
+    rollbar (2.14.0)
+      multi_json
     rspec (3.5.0)
       rspec-core (~> 3.5.0)
       rspec-expectations (~> 3.5.0)
@@ -316,6 +318,7 @@ DEPENDENCIES
   puma
   rails (= 4.2.6)
   react-rails
+  rollbar
   rspec
   rspec-rails
   sass-rails (~> 5.0)
