@@ -18,7 +18,7 @@ class Card extends React.Component {
       </div>
     )
   }
-})
+}
 
 Card.defaultProps = {
   link: {}

@@ -35,12 +35,11 @@ browserifyFile = (filepath) ->
   browserifyOpts =
     debug: true,
     extensions: watchedExtensions
-    cacheFile: './tmp/cache/browserify-cache.json'
 
   browserifyinc(filepath, browserifyOpts)
     .transform('browserify-css', { global: true })
+    .transform("babelify", { presets: ["es2015", "react"] })
     .transform('coffee-reactify', { extensions: [".cjsx", ".coffee"] })
-    .transform("babelify", {presets: ["es2015", "react"]})
     .bundle()
     .on 'error', (err) ->
       console.log(err)
