@@ -1,16 +1,15 @@
 React = require('react')
 
-@Card = React.createClass
-  propTypes: ->
-    link: React.PropTypes.object.isRequired
-
-  thumbnailUrl: ->
+const Card = React.createClass({
+  thumbnailUrl: () => {
     @props.link.thumbnail_url.replace('http://', 'https://')
+  }
 
-  getDefaultProps: ->
+  getDefaultProps: () => {
     link: {}
+  }
 
-  render: ->
+  render: () => {
     <div className="card">
       <img className="card-img-top img-fluid" src={@thumbnailUrl()} alt="Card image cap" />
       <div className="card-block">
@@ -24,5 +23,7 @@ React = require('react')
         <a href={@props.link.path} className="card-link">Link details</a>
       </div>
     </div>
+  }
+})
 
-module.exports = @Card
+module.exports = Card

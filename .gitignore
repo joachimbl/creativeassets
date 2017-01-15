@@ -27,6 +27,6 @@ log
 *.log
 
 # System files
-.DS_Store
+*.DS_Store
 
 browserify-cache.json

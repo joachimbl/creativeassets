@@ -1,35 +1,46 @@
 gulp            = require 'gulp'
-watchify        = require 'watchify'
 sourcemaps      = require 'gulp-sourcemaps'
 browserify      = require 'browserify'
 browserifyinc   = require 'browserify-incremental'
 coffeereactify  = require 'coffee-reactify'
 source          = require 'vinyl-source-stream'
-replace         = require 'gulp-replace'
+browserifycss   = require 'browserify-css'
 
-gulp.task 'watch', [ 'watch-frontend' ]
+watchedFolders = ["frontend"]
+watchedExtensions = [".cjsx", ".coffee", ".js", ".es6", ".jsx"]
 
-gulp.task 'watch-frontend', ->
-  gulp.watch 'frontend/lib/**/*.cjsx', [ 'compile-frontend' ]
-  gulp.watch 'frontend/lib/**/*.js', [ 'compile-frontend' ]
-  gulp.watch 'frontend/lib/**/*.coffee', [ 'compile-frontend' ]
+gulp.task 'watch', ['watch-files']
 
-gulp.task 'default', [ 'compile-frontend' ]
+gulp.task 'watch-files', ->
+  for watchedFolder in watchedFolders
+    for watchedExtension in watchedExtensions
+      console.log("#{watchedFolder}/lib/**/*#{watchedExtension}")
+      gulp.watch "#{watchedFolder}/lib/**/*#{watchedExtension}", ['compile']
 
-gulp.task 'compile-frontend', ->
-  stream = browserifyReact('./frontend/lib/javascripts/frontend.js')
-  stream.pipe(source('frontend.js.erb'))
-        .pipe(replace('<%s>', ''))
-        .pipe(gulp.dest('frontend/dist/javascripts'))
+gulp.task 'default', ['compile']
 
-browserifyReact = (file) ->
+gulp.task 'compile', ->
+  compile("frontend", "frontend.js")
+
+compile = (folder, filename) ->
+  stream = browserifyFile("./#{folder}/lib/javascripts/#{filename}")
+  outputStream(stream, folder, filename)
+
+outputStream = (stream, destinationFolder, destinationFilename) ->
+  stream.pipe(source(destinationFilename))
+        .pipe(gulp.dest("#{destinationFolder}/dist/javascripts"))
+        .pipe(sourcemaps.write())
+
+browserifyFile = (filepath) ->
   browserifyOpts =
     debug: true,
-    extensions: ['.coffee', '.cjsx', '.js']
+    extensions: watchedExtensions
     cacheFile: './tmp/cache/browserify-cache.json'
 
-  browserifyinc(file, browserifyOpts)
-    .transform('coffee-reactify')
+  browserifyinc(filepath, browserifyOpts)
+    .transform('browserify-css', { global: true })
+    .transform('coffee-reactify', { extensions: [".cjsx", ".coffee"] })
+    .transform("babelify", {presets: ["es2015", "react"]})
     .bundle()
     .on 'error', (err) ->
       console.log(err)
