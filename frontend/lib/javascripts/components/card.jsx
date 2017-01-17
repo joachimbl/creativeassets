@@ -24,5 +24,4 @@ Card.defaultProps = {
   link: {}
 };
 
-
 module.exports = Card
