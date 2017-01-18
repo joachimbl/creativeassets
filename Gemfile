@@ -51,8 +51,6 @@ gem 'active_model_serializers', '~> 0.9.5'
 
 gem 'puma'
 
-gem 'bootstrap-sass', '~> 3.3.6'
-
 gem 'font-awesome-sass', '~> 4.6.2'
 
 gem 'will_paginate'
