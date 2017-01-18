@@ -5,10 +5,10 @@ Rails.application.routes.draw do
       omniauth_callbacks: 'frontend/users/omniauth_callbacks'
     }
 
-    resources :links, only: [:show]
+    resources :links, only: [:show, :new, :create]
   end
 
   scope module: :api, namespace: :api, path: :api do
-    resources :links, only: [:index]
+    resources :links, only: [:index, :create]
   end
 end
