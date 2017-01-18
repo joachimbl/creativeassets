@@ -102,7 +102,9 @@
         <div class="pulse-circle"></div>
         <div class="pulse-circle-2"></div>
         <div class="pulse-circle-3"></div>
-        <a class="btn-add-asset-sm" href="" aria-label="Add an awesome asset." role="button" tabindex="-1"><i class="material-icons md-24">add</i></a>
+        <%= link_to new_link_path, { class: "btn-add-asset-sm", role: "button", tabindex: "-1", "aria-label" => "Add an awesome asset." } do %>
+          <i class="material-icons md-24">add</i>
+        <% end %>
       </div>
     </nav>
   </header>
