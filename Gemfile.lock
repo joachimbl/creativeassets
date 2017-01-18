@@ -57,9 +57,6 @@ GEM
     bootstrap (4.0.0.alpha5)
       autoprefixer-rails (>= 6.0.3)
       sass (>= 3.4.19)
-    bootstrap-sass (3.3.7)
-      autoprefixer-rails (>= 5.2.1)
-      sass (>= 3.3.4)
     builder (3.2.2)
     byebug (9.0.6)
     celluloid (0.17.3)
@@ -301,7 +298,6 @@ DEPENDENCIES
   active_model_serializers (~> 0.9.5)
   better_errors
   bootstrap (~> 4.0.0.alpha3)
-  bootstrap-sass (~> 3.3.6)
   byebug
   coffee-rails (~> 4.1.0)
   devise
@@ -334,6 +330,3 @@ DEPENDENCIES
   web-console (~> 2.0)
   webmock
   will_paginate
-
-BUNDLED WITH
-   1.13.6

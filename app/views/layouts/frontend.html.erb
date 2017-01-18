@@ -32,13 +32,13 @@
   <header class="container">
     <nav class="main-header row">
       <div class="col-xs-5 col-md-3">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
           <%= image_tag("logo.svg") %>
         </a>
       </div>
-      <div class="col-xs-7 col-md-4 col-md-push-5">
+      <div class="col-xs-7 col-md-4 push-md-5">
         <% unless current_user %>
-          <ul class="nav navbar-nav pull-xs-right sign-up-nav">
+          <ul class="nav navbar-nav float-xs-right sign-up-nav">
             <li class="nav-item">
               <a class="btn btn-default btn-sm" href="#" data-toggle="modal" data-target="#signup-modal">Sign up</a>
 
@@ -65,7 +65,7 @@
                       </form>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary-outline" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
                       <button type="button" class="btn btn-secondary">Save changes</button>
                     </div>
                   </div>
@@ -73,12 +73,12 @@
               </div>
             </li>
             <li class="nav-item">
-              <%= link_to "Sign in", omniauth_authorize_path(:user, :facebook), class: "btn btn-primary-outline btn-sm" %>
+              <%= link_to "Sign in", omniauth_authorize_path(:user, :facebook), class: "btn btn-outline-primary btn-sm" %>
             </li>
           </ul>
         <% end %>
       </div>
-      <div class="col-xs-12 col-md-5 col-md-pull-4 main-nav">
+      <div class="col-xs-12 col-md-5 pull-md-4 main-nav">
         <ul class="nav navbar-nav">
           <li class="nav-item active">
             <a class="nav-link" href="#">Explore</a>
